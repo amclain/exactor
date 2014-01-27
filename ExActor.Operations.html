@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ExActor.Operations</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      relpath = '';
+      if (relpath != '') relpath += '/';
+    </script>
+
+    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+  </head>
+
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+
+    <div id="content">
+      <h1>
+        ExActor.Operations
+        
+      </h1>
+
+      
+        <div id="moduledoc" class="docstring">
+          <p>Macros that can be used for simpler definition of <code>gen_server</code> operations 
+such as casts or calls.</p>
+
+        </div>
+      
+
+      
+
+      
+
+      
+
+      
+        <h2 id="macros_summary">Macros summary</h2>
+        <table class="summary">
+          <tr>
+  <td class="summary_signature"><a href="#defcall/3">defcall(call, options, body)</a></td>
+  
+    <td class="summary_synopsis"><p>Defines the call callback clause and a corresponding interface fun.</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#defcast/3">defcast(cast, options, body)</a></td>
+  
+    <td class="summary_synopsis"><p>Defines the cast callback clause and a corresponding interface fun.</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#definfo/3">definfo(msg, opts, body)</a></td>
+  
+    <td class="summary_synopsis"><p>Defines the info callback clause. Responses work just like with casts.</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#definit/2">definit(arg, opts)</a></td>
+  
+    <td class="summary_synopsis"><p>Defines the initializer callback. </p>
+</td>
+  
+</tr>
+
+        </table>
+      
+
+      
+
+      
+
+      
+
+      
+        <div id="macros_details" class="details_list">
+          <h2>Macros</h2>
+          <div class="detail">
+  <p class="signature" id="defcall/3">
+    <strong>defcall(call, options, body)</strong>
+  </p>
+  
+  <div class="docstring"><p>Defines the call callback clause and a corresponding interface fun.</p>
+
+<p>Examples:</p>
+
+<pre><code>defcall operation, do: reply(response)
+defcall get, state: state, do: reply(state)
+defcall inc, state: state, do: set_and_reply(state + 1, response)
+
+# timeout option
+defcall long_call, state: state, timeout: :timer.seconds(10), do: ...
+
+# omitting interface fun
+defcall operation, export: false, do: ...
+
+# pattern matching
+defcall a(1), do: ...
+defcall a(2), do: ...
+defcall a(x), state: 1, do: ...
+defcall a(x), when: x &gt; 1, do: ...
+defcall a(x), state: state, when: state &gt; 1, do: ...
+defcall a(_), do: ...
+</code></pre>
+</div>
+  
+</div>
+<div class="detail">
+  <p class="signature" id="defcast/3">
+    <strong>defcast(cast, options, body)</strong>
+  </p>
+  
+  <div class="docstring"><p>Defines the cast callback clause and a corresponding interface fun.</p>
+
+<p>Examples:</p>
+
+<pre><code>defcast operation, do: noreply
+defcast inc(x), state: state, do: new_state(state + x)
+
+# omitting interface fun
+defcast operation, export: false, do: ...
+
+# pattern matching
+defcast a(1), do: ...
+defcast a(2), do: ...
+defcast a(x), state: 1, do: ...
+defcast a(x), when: x &gt; 1, do: ...
+defcast a(x), state: state, when: state &gt; 1, do: ...
+defcast a(_), do: ...
+</code></pre>
+</div>
+  
+</div>
+<div class="detail">
+  <p class="signature" id="definfo/3">
+    <strong>definfo(msg, opts, body)</strong>
+  </p>
+  
+  <div class="docstring"><p>Defines the info callback clause. Responses work just like with casts.</p>
+
+<p>Examples:</p>
+
+<pre><code>definfo :some_message, do: ...
+definfo :another_message, state: ..., do:
+</code></pre>
+</div>
+  
+</div>
+<div class="detail">
+  <p class="signature" id="definit/2">
+    <strong>definit(arg, opts)</strong>
+  </p>
+  
+  <div class="docstring"><p>Defines the initializer callback. </p>
+
+<p>Examples:</p>
+
+<pre><code># ignoring the input argument
+definit do: HashSet.new
+
+# using the input argument
+definit x do
+  x + 1
+end
+
+# pattern matching
+definit x, when: ..., do: ...
+</code></pre>
+</div>
+  
+</div>
+
+        </div>
+      
+
+      
+    </div>
+  </body>
+</html>

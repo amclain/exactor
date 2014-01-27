@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ExActor.Tolerant</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      relpath = '';
+      if (relpath != '') relpath += '/';
+    </script>
+
+    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+  </head>
+
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+
+    <div id="content">
+      <h1>
+        ExActor.Tolerant
+        
+      </h1>
+
+      
+        <div id="moduledoc" class="docstring">
+          <p>Predefine that provides tolerant default implementation for <code>gen_server</code> 
+required functions. Default implementation will cause the <code>gen_server</code> to
+ignore messages (e.g. calls/casts).</p>
+
+<p>All ExActor macros are imported.</p>
+
+<p>Example:</p>
+
+<pre><code>defmodule MyActor do
+  use ExActor.Tolerant
+  ...
+end
+
+# Setting the initial state:
+use ExActor.Tolerant, initial_state: HashDict.new
+
+# Locally registered name:
+use ExActor.Tolerant, export: :some_registered_name
+
+# Globally registered name:
+use ExActor.Tolerant, export: {:global, :global_registered_name}
+</code></pre>
+
+        </div>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+  </body>
+</html>
