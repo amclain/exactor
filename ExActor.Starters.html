@@ -32,9 +32,13 @@ can be used to start new instances of the gen_server.</p>
 
 <p>Examples:</p>
 
-<pre><code>Actor.start         # same as Actor.start(nil)
+<pre><code>Actor.start   # same as Actor.start(nil)
 Actor.start(init_arg)
 Actor.start(init_arg, gen_server_options)
+
+Actor.start_link  # same as Actor.start_link(nil)
+Actor.start_link(init_arg)
+Actor.start_link(init_arg, gen_server_options)
 </code></pre>
 
         </div>
