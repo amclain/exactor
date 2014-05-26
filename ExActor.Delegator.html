@@ -20,10 +20,27 @@
     </script>
 
     <div id="content">
+      <div class="breadcrumbs">exactor v0.4.0 &rarr; <a href="overview.html">Overview</a> &rarr; ExActor &rarr; <a href="ExActor.Delegator.html">Delegator</a></div>
+
       <h1>
         ExActor.Delegator
         
       </h1>
+
+      
+
+      <ul class="summary_links">
+        
+        
+          <li><a href="#summary">Summary</a></li>
+        
+        
+        
+          <li><a href="#macros_details">Macros</a></li>
+        
+        
+        
+      </ul>
 
       
         <div id="moduledoc" class="docstring">
@@ -34,18 +51,18 @@ call/cast operations delegate to another module.</p>
       
 
       
-
+        <a href="https://github.com/sasa1977/exactor/blob/0.4.0/lib/exactor/delegator.ex#L1" target="_blank" class="view_source">Source</a>
       
 
       
 
       
-        <h2 id="macros_summary">Macros summary</h2>
+        <h2 id="summary">Summary<div class="detail_header_links"><a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a></div></h2>
         <table class="summary">
           <tr>
   <td class="summary_signature"><a href="#delegate_to/2">delegate_to(target_module, opts)</a></td>
   
-    <td class="summary_synopsis"><p>Creates wrapper operations around the <code>target_module</code>.</p>
+    <td class="summary_synopsis"><p>Creates wrapper operations around the <code>target_module</code></p>
 </td>
   
 </tr>
@@ -58,14 +75,17 @@ call/cast operations delegate to another module.</p>
       
 
       
-
-      
         <div id="macros_details" class="details_list">
           <h2>Macros</h2>
           <div class="detail">
-  <p class="signature" id="delegate_to/2">
-    <strong>delegate_to(target_module, opts)</strong>
-  </p>
+  <div class="detail_header" id="delegate_to/2">
+    <span class="signature"><strong>delegate_to(target_module, opts)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(macro)</span>
+      <a href="#delegate_to/2" class="detail_link" title="Link to this macro">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
   
   <div class="docstring"><p>Creates wrapper operations around the <code>target_module</code>.</p>
 
@@ -86,7 +106,7 @@ end
 <p>This is the same as:</p>
 
 <pre><code>defmodule HashDictActor do
-  use ExActor
+  use ExActor.GenServer
 
   definit do: HashDict.new
 
@@ -102,6 +122,8 @@ end
 end
 </code></pre>
 </div>
+  
+    <a href="https://github.com/sasa1977/exactor/blob/0.4.0/lib/exactor/delegator.ex#L41" target="_blank" class="view_source">Source</a>
   
 </div>
 

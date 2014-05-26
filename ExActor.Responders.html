@@ -20,10 +20,27 @@
     </script>
 
     <div id="content">
+      <div class="breadcrumbs">exactor v0.4.0 &rarr; <a href="overview.html">Overview</a> &rarr; ExActor &rarr; <a href="ExActor.Responders.html">Responders</a></div>
+
       <h1>
         ExActor.Responders
         
       </h1>
+
+      
+
+      <ul class="summary_links">
+        
+        
+          <li><a href="#summary">Summary</a></li>
+        
+        
+        
+          <li><a href="#macros_details">Macros</a></li>
+        
+        
+        
+      </ul>
 
       
         <div id="moduledoc" class="docstring">
@@ -34,18 +51,18 @@ handlers.</p>
       
 
       
-
+        <a href="https://github.com/sasa1977/exactor/blob/0.4.0/lib/exactor/responders.ex#L1" target="_blank" class="view_source">Source</a>
       
 
       
 
       
-        <h2 id="macros_summary">Macros summary</h2>
+        <h2 id="summary">Summary<div class="detail_header_links"><a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a></div></h2>
         <table class="summary">
           <tr>
   <td class="summary_signature"><a href="#initial_state/1">initial_state(state)</a></td>
   
-    <td class="summary_synopsis"><p>Can be used from <code>init</code> or <code>definit</code> to return the initial state.</p>
+    <td class="summary_synopsis"><p>Can be used from <code>init</code> or <code>definit</code> to return the initial state</p>
 </td>
   
 </tr>
@@ -53,7 +70,7 @@ handlers.</p>
   <td class="summary_signature"><a href="#new_state/1">new_state(state)</a></td>
   
     <td class="summary_synopsis"><p>Can be used from <code>handle_call</code>, <code>defcall</code>, <code>handle_info</code>, or <code>definfo</code> to
-set the new state.</p>
+set the new state</p>
 </td>
   
 </tr>
@@ -61,7 +78,7 @@ set the new state.</p>
   <td class="summary_signature"><a href="#noreply/0">noreply()</a></td>
   
     <td class="summary_synopsis"><p>Can be used from <code>handle_call</code>, <code>defcall</code>, <code>handle_info</code>, or <code>definfo</code> to
-leave the state unchanged.</p>
+leave the state unchanged</p>
 </td>
   
 </tr>
@@ -76,7 +93,7 @@ state</p>
 <tr>
   <td class="summary_signature"><a href="#set_and_reply/2">set_and_reply(new_state, response)</a></td>
   
-    <td class="summary_synopsis"><p>Can be used from <code>handle_call</code> or <code>defcall</code> to reply and change the state.</p>
+    <td class="summary_synopsis"><p>Can be used from <code>handle_call</code> or <code>defcall</code> to reply and change the state</p>
 </td>
   
 </tr>
@@ -89,56 +106,89 @@ state</p>
       
 
       
-
-      
         <div id="macros_details" class="details_list">
           <h2>Macros</h2>
           <div class="detail">
-  <p class="signature" id="initial_state/1">
-    <strong>initial_state(state)</strong>
-  </p>
+  <div class="detail_header" id="initial_state/1">
+    <span class="signature"><strong>initial_state(state)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(macro)</span>
+      <a href="#initial_state/1" class="detail_link" title="Link to this macro">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
   
   <div class="docstring"><p>Can be used from <code>init</code> or <code>definit</code> to return the initial state.</p>
 </div>
   
+    <a href="https://github.com/sasa1977/exactor/blob/0.4.0/lib/exactor/responders.ex#L10" target="_blank" class="view_source">Source</a>
+  
 </div>
 <div class="detail">
-  <p class="signature" id="new_state/1">
-    <strong>new_state(state)</strong>
-  </p>
+  <div class="detail_header" id="new_state/1">
+    <span class="signature"><strong>new_state(state)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(macro)</span>
+      <a href="#new_state/1" class="detail_link" title="Link to this macro">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
   
   <div class="docstring"><p>Can be used from <code>handle_call</code>, <code>defcall</code>, <code>handle_info</code>, or <code>definfo</code> to
 set the new state.</p>
 </div>
   
+    <a href="https://github.com/sasa1977/exactor/blob/0.4.0/lib/exactor/responders.ex#L39" target="_blank" class="view_source">Source</a>
+  
 </div>
 <div class="detail">
-  <p class="signature" id="noreply/0">
-    <strong>noreply()</strong>
-  </p>
+  <div class="detail_header" id="noreply/0">
+    <span class="signature"><strong>noreply()</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(macro)</span>
+      <a href="#noreply/0" class="detail_link" title="Link to this macro">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
   
   <div class="docstring"><p>Can be used from <code>handle_call</code>, <code>defcall</code>, <code>handle_info</code>, or <code>definfo</code> to
 leave the state unchanged.</p>
 </div>
   
+    <a href="https://github.com/sasa1977/exactor/blob/0.4.0/lib/exactor/responders.ex#L49" target="_blank" class="view_source">Source</a>
+  
 </div>
 <div class="detail">
-  <p class="signature" id="reply/1">
-    <strong>reply(response)</strong>
-  </p>
+  <div class="detail_header" id="reply/1">
+    <span class="signature"><strong>reply(response)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(macro)</span>
+      <a href="#reply/1" class="detail_link" title="Link to this macro">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
   
   <div class="docstring"><p>Can be used from <code>handle_call</code> or <code>defcall</code> to reply without changing the
 state</p>
 </div>
   
+    <a href="https://github.com/sasa1977/exactor/blob/0.4.0/lib/exactor/responders.ex#L20" target="_blank" class="view_source">Source</a>
+  
 </div>
 <div class="detail">
-  <p class="signature" id="set_and_reply/2">
-    <strong>set_and_reply(new_state, response)</strong>
-  </p>
+  <div class="detail_header" id="set_and_reply/2">
+    <span class="signature"><strong>set_and_reply(new_state, response)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(macro)</span>
+      <a href="#set_and_reply/2" class="detail_link" title="Link to this macro">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
   
   <div class="docstring"><p>Can be used from <code>handle_call</code> or <code>defcall</code> to reply and change the state.</p>
 </div>
+  
+    <a href="https://github.com/sasa1977/exactor/blob/0.4.0/lib/exactor/responders.ex#L29" target="_blank" class="view_source">Source</a>
   
 </div>
 

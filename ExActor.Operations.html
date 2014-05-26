@@ -20,53 +20,70 @@
     </script>
 
     <div id="content">
+      <div class="breadcrumbs">exactor v0.4.0 &rarr; <a href="overview.html">Overview</a> &rarr; ExActor &rarr; <a href="ExActor.Operations.html">Operations</a></div>
+
       <h1>
         ExActor.Operations
         
       </h1>
 
       
+
+      <ul class="summary_links">
+        
+        
+          <li><a href="#summary">Summary</a></li>
+        
+        
+        
+          <li><a href="#macros_details">Macros</a></li>
+        
+        
+        
+      </ul>
+
+      
         <div id="moduledoc" class="docstring">
-          <p>Macros that can be used for simpler definition of <code>gen_server</code> operations 
+          <p>Macros that can be used for simpler definition of <code>gen_server</code> operations
 such as casts or calls.</p>
 
         </div>
       
 
       
-
+        <a href="https://github.com/sasa1977/exactor/blob/0.4.0/lib/exactor/operations.ex#L1" target="_blank" class="view_source">Source</a>
       
 
       
 
       
-        <h2 id="macros_summary">Macros summary</h2>
+        <h2 id="summary">Summary<div class="detail_header_links"><a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a></div></h2>
         <table class="summary">
           <tr>
   <td class="summary_signature"><a href="#defcall/3">defcall(call, options, body)</a></td>
   
-    <td class="summary_synopsis"><p>Defines the call callback clause and a corresponding interface fun.</p>
+    <td class="summary_synopsis"><p>Defines the call callback clause and a corresponding interface fun</p>
 </td>
   
 </tr>
 <tr>
   <td class="summary_signature"><a href="#defcast/3">defcast(cast, options, body)</a></td>
   
-    <td class="summary_synopsis"><p>Defines the cast callback clause and a corresponding interface fun.</p>
+    <td class="summary_synopsis"><p>Defines the cast callback clause and a corresponding interface fun</p>
 </td>
   
 </tr>
 <tr>
   <td class="summary_signature"><a href="#definfo/3">definfo(msg, opts, body)</a></td>
   
-    <td class="summary_synopsis"><p>Defines the info callback clause. Responses work just like with casts.</p>
+    <td class="summary_synopsis"><p>Defines the info callback clause. Responses work just like with casts</p>
 </td>
   
 </tr>
 <tr>
   <td class="summary_signature"><a href="#definit/2">definit(arg, opts)</a></td>
   
-    <td class="summary_synopsis"><p>Defines the initializer callback. </p>
+    <td class="summary_synopsis"><p>Defines the initializer callback</p>
 </td>
   
 </tr>
@@ -79,14 +96,17 @@ such as casts or calls.</p>
       
 
       
-
-      
         <div id="macros_details" class="details_list">
           <h2>Macros</h2>
           <div class="detail">
-  <p class="signature" id="defcall/3">
-    <strong>defcall(call, options, body)</strong>
-  </p>
+  <div class="detail_header" id="defcall/3">
+    <span class="signature"><strong>defcall(call, options, body)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(macro)</span>
+      <a href="#defcall/3" class="detail_link" title="Link to this macro">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
   
   <div class="docstring"><p>Defines the call callback clause and a corresponding interface fun.</p>
 
@@ -112,11 +132,18 @@ defcall a(_), do: ...
 </code></pre>
 </div>
   
+    <a href="https://github.com/sasa1977/exactor/blob/0.4.0/lib/exactor/operations.ex#L101" target="_blank" class="view_source">Source</a>
+  
 </div>
 <div class="detail">
-  <p class="signature" id="defcast/3">
-    <strong>defcast(cast, options, body)</strong>
-  </p>
+  <div class="detail_header" id="defcast/3">
+    <span class="signature"><strong>defcast(cast, options, body)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(macro)</span>
+      <a href="#defcast/3" class="detail_link" title="Link to this macro">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
   
   <div class="docstring"><p>Defines the cast callback clause and a corresponding interface fun.</p>
 
@@ -138,11 +165,18 @@ defcast a(_), do: ...
 </code></pre>
 </div>
   
+    <a href="https://github.com/sasa1977/exactor/blob/0.4.0/lib/exactor/operations.ex#L67" target="_blank" class="view_source">Source</a>
+  
 </div>
 <div class="detail">
-  <p class="signature" id="definfo/3">
-    <strong>definfo(msg, opts, body)</strong>
-  </p>
+  <div class="detail_header" id="definfo/3">
+    <span class="signature"><strong>definfo(msg, opts, body)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(macro)</span>
+      <a href="#definfo/3" class="detail_link" title="Link to this macro">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
   
   <div class="docstring"><p>Defines the info callback clause. Responses work just like with casts.</p>
 
@@ -153,13 +187,20 @@ definfo :another_message, state: ..., do:
 </code></pre>
 </div>
   
+    <a href="https://github.com/sasa1977/exactor/blob/0.4.0/lib/exactor/operations.ex#L207" target="_blank" class="view_source">Source</a>
+  
 </div>
 <div class="detail">
-  <p class="signature" id="definit/2">
-    <strong>definit(arg, opts)</strong>
-  </p>
+  <div class="detail_header" id="definit/2">
+    <span class="signature"><strong>definit(arg, opts)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(macro)</span>
+      <a href="#definit/2" class="detail_link" title="Link to this macro">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
   
-  <div class="docstring"><p>Defines the initializer callback. </p>
+  <div class="docstring"><p>Defines the initializer callback.</p>
 
 <p>Examples:</p>
 
@@ -175,6 +216,8 @@ end
 definit x, when: ..., do: ...
 </code></pre>
 </div>
+  
+    <a href="https://github.com/sasa1977/exactor/blob/0.4.0/lib/exactor/operations.ex#L26" target="_blank" class="view_source">Source</a>
   
 </div>
 
