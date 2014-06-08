@@ -20,17 +20,14 @@
     </script>
 
     <div id="content">
-      <div class="breadcrumbs">exactor v0.4.0 &rarr; <a href="overview.html">Overview</a> &rarr; ExActor &rarr; <a href="ExActor.Operations.html">Operations</a></div>
+      <div class="breadcrumbs">exactor v0.5.0 &rarr; <a href="overview.html">Overview</a> &rarr; ExActor &rarr; <a href="ExActor.Operations.html">Operations</a></div>
 
       <h1>
         ExActor.Operations
         
       </h1>
 
-      
-
       <ul class="summary_links">
-        
         
           <li><a href="#summary">Summary</a></li>
         
@@ -51,37 +48,35 @@ such as casts or calls.</p>
       
 
       
-        <a href="https://github.com/sasa1977/exactor/blob/0.4.0/lib/exactor/operations.ex#L1" target="_blank" class="view_source">Source</a>
-      
-
+        <a href="https://github.com/sasa1977/exactor/blob/0.5.0/lib/exactor/operations.ex#L1" class="view_source">Source</a>
       
 
       
         <h2 id="summary">Summary<div class="detail_header_links"><a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a></div></h2>
         <table class="summary">
           <tr>
-  <td class="summary_signature"><a href="#defcall/3">defcall(call, options, body)</a></td>
+  <td class="summary_signature"><a href="#defcall/3">defcall(req_def, options \\ [], body)</a></td>
   
     <td class="summary_synopsis"><p>Defines the call callback clause and a corresponding interface fun</p>
 </td>
   
 </tr>
 <tr>
-  <td class="summary_signature"><a href="#defcast/3">defcast(cast, options, body)</a></td>
+  <td class="summary_signature"><a href="#defcast/3">defcast(req_def, options \\ [], body)</a></td>
   
     <td class="summary_synopsis"><p>Defines the cast callback clause and a corresponding interface fun</p>
 </td>
   
 </tr>
 <tr>
-  <td class="summary_signature"><a href="#definfo/3">definfo(msg, opts, body)</a></td>
+  <td class="summary_signature"><a href="#definfo/3">definfo(msg, opts \\ [], body)</a></td>
   
     <td class="summary_synopsis"><p>Defines the info callback clause. Responses work just like with casts</p>
 </td>
   
 </tr>
 <tr>
-  <td class="summary_signature"><a href="#definit/2">definit(arg, opts)</a></td>
+  <td class="summary_signature"><a href="#definit/2">definit(arg \\ {:_, [], ExActor.Operations}, opts)</a></td>
   
     <td class="summary_synopsis"><p>Defines the initializer callback</p>
 </td>
@@ -100,7 +95,7 @@ such as casts or calls.</p>
           <h2>Macros</h2>
           <div class="detail">
   <div class="detail_header" id="defcall/3">
-    <span class="signature"><strong>defcall(call, options, body)</strong></span>
+    <span class="signature"><strong>defcall(req_def, options \\ [], body)</strong></span>
     <div class="detail_header_links">
       <span class="detail_type">(macro)</span>
       <a href="#defcall/3" class="detail_link" title="Link to this macro">#</a>
@@ -132,12 +127,12 @@ defcall a(_), do: ...
 </code></pre>
 </div>
   
-    <a href="https://github.com/sasa1977/exactor/blob/0.4.0/lib/exactor/operations.ex#L101" target="_blank" class="view_source">Source</a>
+    <a href="https://github.com/sasa1977/exactor/blob/0.5.0/lib/exactor/operations.ex#L86" class="view_source">Source</a>
   
 </div>
 <div class="detail">
   <div class="detail_header" id="defcast/3">
-    <span class="signature"><strong>defcast(cast, options, body)</strong></span>
+    <span class="signature"><strong>defcast(req_def, options \\ [], body)</strong></span>
     <div class="detail_header_links">
       <span class="detail_type">(macro)</span>
       <a href="#defcast/3" class="detail_link" title="Link to this macro">#</a>
@@ -165,12 +160,12 @@ defcast a(_), do: ...
 </code></pre>
 </div>
   
-    <a href="https://github.com/sasa1977/exactor/blob/0.4.0/lib/exactor/operations.ex#L67" target="_blank" class="view_source">Source</a>
+    <a href="https://github.com/sasa1977/exactor/blob/0.5.0/lib/exactor/operations.ex#L58" class="view_source">Source</a>
   
 </div>
 <div class="detail">
   <div class="detail_header" id="definfo/3">
-    <span class="signature"><strong>definfo(msg, opts, body)</strong></span>
+    <span class="signature"><strong>definfo(msg, opts \\ [], body)</strong></span>
     <div class="detail_header_links">
       <span class="detail_type">(macro)</span>
       <a href="#definfo/3" class="detail_link" title="Link to this macro">#</a>
@@ -187,12 +182,12 @@ definfo :another_message, state: ..., do:
 </code></pre>
 </div>
   
-    <a href="https://github.com/sasa1977/exactor/blob/0.4.0/lib/exactor/operations.ex#L207" target="_blank" class="view_source">Source</a>
+    <a href="https://github.com/sasa1977/exactor/blob/0.5.0/lib/exactor/operations.ex#L98" class="view_source">Source</a>
   
 </div>
 <div class="detail">
   <div class="detail_header" id="definit/2">
-    <span class="signature"><strong>definit(arg, opts)</strong></span>
+    <span class="signature"><strong>definit(arg \\ {:_, [], ExActor.Operations}, opts)</strong></span>
     <div class="detail_header_links">
       <span class="detail_type">(macro)</span>
       <a href="#definit/2" class="detail_link" title="Link to this macro">#</a>
@@ -217,7 +212,7 @@ definit x, when: ..., do: ...
 </code></pre>
 </div>
   
-    <a href="https://github.com/sasa1977/exactor/blob/0.4.0/lib/exactor/operations.ex#L26" target="_blank" class="view_source">Source</a>
+    <a href="https://github.com/sasa1977/exactor/blob/0.5.0/lib/exactor/operations.ex#L23" class="view_source">Source</a>
   
 </div>
 
