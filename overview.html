@@ -20,9 +20,9 @@
     </script>
 
     <div id="content">
-      <div class="breadcrumbs">exactor v0.5.0 &rarr; <a href="overview.html">Overview</a></div>
+      <div class="breadcrumbs">exactor v0.6.0 &rarr; <a href="overview.html">Overview</a></div>
 
-      <h1>exactor v0.5.0</h1>
+      <h1>exactor v0.6.0</h1>
 
       <ul class="summary_links">
         
@@ -38,69 +38,56 @@
           <tr>
   <td class="summary_signature"><a href="ExActor.Delegator.html">ExActor.Delegator</a></td>
   
-    <td class="summary_synopsis"><p>Provides <a href="#delegate_to/2"><code>delegate_to/2</code></a> macro that can be used to simplify cases when
-call/cast operations delegate to another module</p>
+    <td class="summary_synopsis"><p>Provides <a href="#delegate_to/2"><code>delegate_to/2</code></a> macro that can be used to simplify cases when call/cast operations delegate to another module</p>
 </td>
   
 </tr>
 <tr>
   <td class="summary_signature"><a href="ExActor.Empty.html">ExActor.Empty</a></td>
   
-    <td class="summary_synopsis"><p>Empty predefine. Imports all ExActor macros, but doesn&#39;t provide any default 
-implementation. The declaring module must define all required functions
-of the <code>gen_server</code> behaviour</p>
+    <td class="summary_synopsis"><p>Empty predefine. Imports all ExActor macros, but doesn't provide any default implementation. The declaring module must define all required functions of the <code>gen_server</code> behaviour</p>
 </td>
   
 </tr>
 <tr>
   <td class="summary_signature"><a href="ExActor.GenServer.html">ExActor.GenServer</a></td>
   
-    <td class="summary_synopsis"><p>Predefine that relies on <code>GenServer</code> provided by Elixir standard
-lib. All ExActor macros are imported</p>
+    <td class="summary_synopsis"><p>Predefine that relies on <code>GenServer</code> provided by Elixir standard lib. All ExActor macros are imported</p>
 </td>
   
 </tr>
 <tr>
   <td class="summary_signature"><a href="ExActor.Operations.html">ExActor.Operations</a></td>
   
-    <td class="summary_synopsis"><p>Macros that can be used for simpler definition of <code>gen_server</code> operations
-such as casts or calls</p>
+    <td class="summary_synopsis"><p>Macros that can be used for simpler definition of <code>gen_server</code> operations such as casts or calls</p>
 </td>
   
 </tr>
 <tr>
   <td class="summary_signature"><a href="ExActor.Responders.html">ExActor.Responders</a></td>
   
-    <td class="summary_synopsis"><p>Helper macros that can be used for simpler responses from init/call/cast/info
-handlers</p>
+    <td class="summary_synopsis"><p>Helper macros that can be used for simpler responses from init/call/cast/info handlers</p>
 </td>
   
 </tr>
 <tr>
   <td class="summary_signature"><a href="ExActor.Starters.html">ExActor.Starters</a></td>
   
-    <td class="summary_synopsis"><p>A mixin that provides <code>start/2</code> and <code>start_link/2</code> interface functions that
-can be used to start new instances of the gen_server</p>
+    <td class="summary_synopsis"><p>A mixin that provides <code>start/2</code> and <code>start_link/2</code> interface functions that can be used to start new instances of the gen_server</p>
 </td>
   
 </tr>
 <tr>
   <td class="summary_signature"><a href="ExActor.Strict.html">ExActor.Strict</a></td>
   
-    <td class="summary_synopsis"><p>Predefine that provides strict default implementation for <code>gen_server</code> 
-required functions. Default implementation will cause the <code>gen_server</code> to
-be stopped. This predefine is useful if you want to need only some parts of
-the server to be implemented, and want to fail for everything else that
-happens on the server</p>
+    <td class="summary_synopsis"><p>Predefine that provides strict default implementation for <code>gen_server</code> required functions. Default implementation will cause the <code>gen_server</code> to be stopped. This predefine is useful if you want to need only some parts of the server to be implemented, and want to fail for everything else that happens on the server</p>
 </td>
   
 </tr>
 <tr>
   <td class="summary_signature"><a href="ExActor.Tolerant.html">ExActor.Tolerant</a></td>
   
-    <td class="summary_synopsis"><p>Predefine that provides tolerant default implementation for <code>gen_server</code> 
-required functions. Default implementation will cause the <code>gen_server</code> to
-ignore messages (e.g. calls/casts)</p>
+    <td class="summary_synopsis"><p>Predefine that provides tolerant default implementation for <code>gen_server</code> required functions. Default implementation will cause the <code>gen_server</code> to ignore messages (e.g. calls/casts)</p>
 </td>
   
 </tr>

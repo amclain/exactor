@@ -20,7 +20,7 @@
     </script>
 
     <div id="content">
-      <div class="breadcrumbs">exactor v0.5.0 &rarr; <a href="overview.html">Overview</a> &rarr; ExActor &rarr; <a href="ExActor.Strict.html">Strict</a></div>
+      <div class="breadcrumbs">exactor v0.6.0 &rarr; <a href="overview.html">Overview</a> &rarr; ExActor &rarr; <a href="ExActor.Strict.html">Strict</a></div>
 
       <h1>
         ExActor.Strict
@@ -37,16 +37,9 @@
 
       
         <div id="moduledoc" class="docstring">
-          <p>Predefine that provides strict default implementation for <code>gen_server</code> 
-required functions. Default implementation will cause the <code>gen_server</code> to
-be stopped. This predefine is useful if you want to need only some parts of
-the server to be implemented, and want to fail for everything else that
-happens on the server.</p>
-
+          <p>Predefine that provides strict default implementation for <code>gen_server</code> required functions. Default implementation will cause the <code>gen_server</code> to be stopped. This predefine is useful if you want to need only some parts of the server to be implemented, and want to fail for everything else that happens on the server.</p>
 <p>All ExActor macros are imported.</p>
-
 <p>Example:</p>
-
 <pre><code>defmodule MyActor do
   use ExActor.Strict
 
@@ -63,14 +56,13 @@ use ExActor.Strict, initial_state: HashDict.new
 use ExActor.Strict, export: :some_registered_name
 
 # Globally registered name:
-use ExActor.Strict, export: {:global, :global_registered_name}
-</code></pre>
+use ExActor.Strict, export: {:global, :global_registered_name}</code></pre>
 
         </div>
       
 
       
-        <a href="https://github.com/sasa1977/exactor/blob/0.5.0/lib/exactor/strict.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/sasa1977/exactor/blob/0.6.0/lib/exactor/strict.ex#L1" class="view_source">Source</a>
       
 
       

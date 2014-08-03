@@ -20,7 +20,7 @@
     </script>
 
     <div id="content">
-      <div class="breadcrumbs">exactor v0.5.0 &rarr; <a href="overview.html">Overview</a> &rarr; ExActor &rarr; <a href="ExActor.Delegator.html">Delegator</a></div>
+      <div class="breadcrumbs">exactor v0.6.0 &rarr; <a href="overview.html">Overview</a> &rarr; ExActor &rarr; <a href="ExActor.Delegator.html">Delegator</a></div>
 
       <h1>
         ExActor.Delegator
@@ -41,14 +41,13 @@
 
       
         <div id="moduledoc" class="docstring">
-          <p>Provides <a href="#delegate_to/2"><code>delegate_to/2</code></a> macro that can be used to simplify cases when
-call/cast operations delegate to another module.</p>
+          <p>Provides <a href="#delegate_to/2"><code>delegate_to/2</code></a> macro that can be used to simplify cases when call/cast operations delegate to another module.</p>
 
         </div>
       
 
       
-        <a href="https://github.com/sasa1977/exactor/blob/0.5.0/lib/exactor/delegator.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/sasa1977/exactor/blob/0.6.0/lib/exactor/delegator.ex#L1" class="view_source">Source</a>
       
 
       
@@ -83,9 +82,7 @@ call/cast operations delegate to another module.</p>
   </div>
   
   <div class="docstring"><p>Creates wrapper operations around the <code>target_module</code>.</p>
-
 <p>For example:</p>
-
 <pre><code>defmodule HashDictActor do
   use ExActor.GenServer
   import ExActor.Delegator
@@ -95,11 +92,8 @@ call/cast operations delegate to another module.</p>
     query get/2
     trans put/3
   end
-end
-</code></pre>
-
+end</code></pre>
 <p>This is the same as:</p>
-
 <pre><code>defmodule HashDictActor do
   use ExActor.GenServer
 
@@ -114,11 +108,10 @@ end
     HashDict.put(state, k, v)
     |&gt; new_state
   end
-end
-</code></pre>
+end</code></pre>
 </div>
   
-    <a href="https://github.com/sasa1977/exactor/blob/0.5.0/lib/exactor/delegator.ex#L41" class="view_source">Source</a>
+    <a href="https://github.com/sasa1977/exactor/blob/0.6.0/lib/exactor/delegator.ex#L41" class="view_source">Source</a>
   
 </div>
 

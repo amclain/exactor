@@ -20,7 +20,7 @@
     </script>
 
     <div id="content">
-      <div class="breadcrumbs">exactor v0.5.0 &rarr; <a href="overview.html">Overview</a> &rarr; ExActor &rarr; <a href="ExActor.Operations.html">Operations</a></div>
+      <div class="breadcrumbs">exactor v0.6.0 &rarr; <a href="overview.html">Overview</a> &rarr; ExActor &rarr; <a href="ExActor.Operations.html">Operations</a></div>
 
       <h1>
         ExActor.Operations
@@ -41,14 +41,13 @@
 
       
         <div id="moduledoc" class="docstring">
-          <p>Macros that can be used for simpler definition of <code>gen_server</code> operations
-such as casts or calls.</p>
+          <p>Macros that can be used for simpler definition of <code>gen_server</code> operations such as casts or calls.</p>
 
         </div>
       
 
       
-        <a href="https://github.com/sasa1977/exactor/blob/0.5.0/lib/exactor/operations.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/sasa1977/exactor/blob/0.6.0/lib/exactor/operations.ex#L1" class="view_source">Source</a>
       
 
       
@@ -104,9 +103,7 @@ such as casts or calls.</p>
   </div>
   
   <div class="docstring"><p>Defines the call callback clause and a corresponding interface fun.</p>
-
 <p>Examples:</p>
-
 <pre><code>defcall operation, do: reply(response)
 defcall get, state: state, do: reply(state)
 defcall inc, state: state, do: set_and_reply(state + 1, response)
@@ -123,11 +120,10 @@ defcall a(2), do: ...
 defcall a(x), state: 1, do: ...
 defcall a(x), when: x &gt; 1, do: ...
 defcall a(x), state: state, when: state &gt; 1, do: ...
-defcall a(_), do: ...
-</code></pre>
+defcall a(_), do: ...</code></pre>
 </div>
   
-    <a href="https://github.com/sasa1977/exactor/blob/0.5.0/lib/exactor/operations.ex#L86" class="view_source">Source</a>
+    <a href="https://github.com/sasa1977/exactor/blob/0.6.0/lib/exactor/operations.ex#L86" class="view_source">Source</a>
   
 </div>
 <div class="detail">
@@ -141,9 +137,7 @@ defcall a(_), do: ...
   </div>
   
   <div class="docstring"><p>Defines the cast callback clause and a corresponding interface fun.</p>
-
 <p>Examples:</p>
-
 <pre><code>defcast operation, do: noreply
 defcast inc(x), state: state, do: new_state(state + x)
 
@@ -156,11 +150,10 @@ defcast a(2), do: ...
 defcast a(x), state: 1, do: ...
 defcast a(x), when: x &gt; 1, do: ...
 defcast a(x), state: state, when: state &gt; 1, do: ...
-defcast a(_), do: ...
-</code></pre>
+defcast a(_), do: ...</code></pre>
 </div>
   
-    <a href="https://github.com/sasa1977/exactor/blob/0.5.0/lib/exactor/operations.ex#L58" class="view_source">Source</a>
+    <a href="https://github.com/sasa1977/exactor/blob/0.6.0/lib/exactor/operations.ex#L58" class="view_source">Source</a>
   
 </div>
 <div class="detail">
@@ -174,15 +167,12 @@ defcast a(_), do: ...
   </div>
   
   <div class="docstring"><p>Defines the info callback clause. Responses work just like with casts.</p>
-
 <p>Examples:</p>
-
 <pre><code>definfo :some_message, do: ...
-definfo :another_message, state: ..., do:
-</code></pre>
+definfo :another_message, state: ..., do:</code></pre>
 </div>
   
-    <a href="https://github.com/sasa1977/exactor/blob/0.5.0/lib/exactor/operations.ex#L98" class="view_source">Source</a>
+    <a href="https://github.com/sasa1977/exactor/blob/0.6.0/lib/exactor/operations.ex#L98" class="view_source">Source</a>
   
 </div>
 <div class="detail">
@@ -196,9 +186,7 @@ definfo :another_message, state: ..., do:
   </div>
   
   <div class="docstring"><p>Defines the initializer callback.</p>
-
 <p>Examples:</p>
-
 <pre><code># ignoring the input argument
 definit do: HashSet.new
 
@@ -208,11 +196,10 @@ definit x do
 end
 
 # pattern matching
-definit x, when: ..., do: ...
-</code></pre>
+definit x, when: ..., do: ...</code></pre>
 </div>
   
-    <a href="https://github.com/sasa1977/exactor/blob/0.5.0/lib/exactor/operations.ex#L23" class="view_source">Source</a>
+    <a href="https://github.com/sasa1977/exactor/blob/0.6.0/lib/exactor/operations.ex#L23" class="view_source">Source</a>
   
 </div>
 

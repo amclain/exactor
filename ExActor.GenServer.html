@@ -20,7 +20,7 @@
     </script>
 
     <div id="content">
-      <div class="breadcrumbs">exactor v0.5.0 &rarr; <a href="overview.html">Overview</a> &rarr; ExActor &rarr; <a href="ExActor.GenServer.html">GenServer</a></div>
+      <div class="breadcrumbs">exactor v0.6.0 &rarr; <a href="overview.html">Overview</a> &rarr; ExActor &rarr; <a href="ExActor.GenServer.html">GenServer</a></div>
 
       <h1>
         ExActor.GenServer
@@ -37,11 +37,8 @@
 
       
         <div id="moduledoc" class="docstring">
-          <p>Predefine that relies on <code>GenServer</code> provided by Elixir standard
-lib. All ExActor macros are imported.</p>
-
+          <p>Predefine that relies on <code>GenServer</code> provided by Elixir standard lib. All ExActor macros are imported.</p>
 <p>Example:</p>
-
 <pre><code>defmodule MyActor do
   use ExActor.GenServer
   ...
@@ -54,14 +51,13 @@ use ExActor.GenServer, initial_state: HashDict.new
 use ExActor.GenServer, export: :some_registered_name
 
 # Globally registered name:
-use ExActor.GenServer, export: {:global, :global_registered_name}
-</code></pre>
+use ExActor.GenServer, export: {:global, :global_registered_name}</code></pre>
 
         </div>
       
 
       
-        <a href="https://github.com/sasa1977/exactor/blob/0.5.0/lib/exactor/gen_server.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/sasa1977/exactor/blob/0.6.0/lib/exactor/gen_server.ex#L1" class="view_source">Source</a>
       
 
       

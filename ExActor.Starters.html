@@ -20,7 +20,7 @@
     </script>
 
     <div id="content">
-      <div class="breadcrumbs">exactor v0.5.0 &rarr; <a href="overview.html">Overview</a> &rarr; ExActor &rarr; <a href="ExActor.Starters.html">Starters</a></div>
+      <div class="breadcrumbs">exactor v0.6.0 &rarr; <a href="overview.html">Overview</a> &rarr; ExActor &rarr; <a href="ExActor.Starters.html">Starters</a></div>
 
       <h1>
         ExActor.Starters
@@ -37,42 +37,30 @@
 
       
         <div id="moduledoc" class="docstring">
-          <p>A mixin that provides <code>start/2</code> and <code>start_link/2</code> interface functions that
-can be used to start new instances of the gen_server.</p>
-
+          <p>A mixin that provides <code>start/2</code> and <code>start_link/2</code> interface functions that can be used to start new instances of the gen_server.</p>
 <p>Examples:</p>
-
 <pre><code>Actor.start   # same as Actor.start(nil)
 Actor.start(init_arg)
 Actor.start(init_arg, gen_server_options)
 
 Actor.start_link  # same as Actor.start_link(nil)
 Actor.start_link(init_arg)
-Actor.start_link(init_arg, gen_server_options)
-</code></pre>
-
-<p>In <code>gen_server_options</code>, you can include <code>name: registered_name</code> to set the
-registered name of the server in runtime. Following patterns are allowed:</p>
-
+Actor.start_link(init_arg, gen_server_options)</code></pre>
+<p>In <code>gen_server_options</code>, you can include <code>name: registered_name</code> to set the registered name of the server in runtime. Following patterns are allowed:</p>
 <ul>
 <li><code>:some_alias</code> - registers locally</li>
 <li><code>{:local, :some_alias}</code> - same as above</li>
 <li><code>{:global, :some_alias}</code> - registers globally</li>
 <li><code>{:via, Module, :alias}</code> - uses Module for registration</li>
 </ul>
-
-<p>All starter functions are overridable, and you can redefine them in your module.
-If you don&#39;t want these functions, you can exclude them, by providing
-<code>starters: false</code> option. For example:</p>
-
-<pre><code>use ExActor.GenServer, starters: false
-</code></pre>
+<p>All starter functions are overridable, and you can redefine them in your module. If you don't want these functions, you can exclude them, by providing <code>starters: false</code> option. For example:</p>
+<pre><code>use ExActor.GenServer, starters: false</code></pre>
 
         </div>
       
 
       
-        <a href="https://github.com/sasa1977/exactor/blob/0.5.0/lib/exactor/starters.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/sasa1977/exactor/blob/0.6.0/lib/exactor/starters.ex#L1" class="view_source">Source</a>
       
 
       

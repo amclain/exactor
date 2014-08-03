@@ -20,28 +20,17 @@
     </script>
 
     <div id="content">
-      <div class="breadcrumbs">exactor v0.5.0 &rarr; <a href="readme.html">README</a></div>
-      <h1>ExActor</h1>
-
-<p>Simplified implementation and usage of <code>gen_server</code> based actors in Elixir.
-This library is inspired by (though not depending on) <a href="https://github.com/yrashk/genx">GenX</a>, but in addition, removes some more boilerplate, and changes some semantics of the handle_call/cast responses.</p>
-
-<p>If you&#39;re new to Erlang, and are not familiar on how gen<em>server works, I strongly suggest you learn about it first. It&#39;s really not that hard, and you can use <a href="http://elixir-lang.org/docs/stable/elixir/GenServer.html">Elixir docs</a> as the starting point. Once you&#39;re familiar with gen</em>server, you can use ExActor to make your actors (gen_servers) more compact.</p>
-
+      <div class="breadcrumbs">exactor v0.6.0 &rarr; <a href="readme.html">README</a></div>
+      <h1 id="exactor">ExActor</h1>
+<p>Simplified implementation and usage of <code>gen_server</code> based actors in Elixir. This library is inspired by (though not depending on) <a href="https://github.com/yrashk/genx">GenX</a>, but in addition, removes some more boilerplate, and changes some semantics of the handle_call/cast responses.</p>
+<p>If you're new to Erlang, and are not familiar on how gen_server works, I strongly suggest you learn about it first. It's really not that hard, and you can use <a href="http://elixir-lang.org/docs/stable/elixir/GenServer.html">Elixir docs</a> as the starting point. Once you're familiar with gen_server, you can use ExActor to make your actors (gen_servers) more compact.</p>
 <p>Status: I use it in production.</p>
-
 <p>Online documentation is available <a href="http://sasa1977.github.io/exactor/">here</a>.</p>
-
 <p>The stable package is also available on <a href="https://hex.pm/packages/exactor">hex</a>.</p>
-
-<h2>Basic usage</h2>
-
+<h2 id="basic-usage">Basic usage</h2>
 <p>Be sure to include a dependency in your <code>mix.exs</code>:</p>
-
-<pre><code class="elixir">deps: [{:exactor, &quot;~&gt; 0.4.0&quot;}, ...]
-</code></pre>
-
-<pre><code class="elixir">defmodule Actor do
+<pre class="elixir"><code>deps: [{:exactor, &quot;~&gt; 0.6.0&quot;}, ...]</code></pre>
+<pre class="elixir"><code>defmodule Actor do
   use ExActor.GenServer
 
   definit do: initial_state(some_state)
@@ -59,27 +48,18 @@ end
 Actor.get(act)         # 1
 
 Actor.inc(act, 2)
-Actor.get(act)         # 3
-</code></pre>
-
-<h2>Predefines</h2>
-
-<p>A predefine is an ExActor mixin that provides some default implementations for
-<code>gen_server</code> callbacks. Following predefines are currently provided:</p>
-
+Actor.get(act)         # 3</code></pre>
+<h2 id="predefines">Predefines</h2>
+<p>A predefine is an ExActor mixin that provides some default implementations for <code>gen_server</code> callbacks. Following predefines are currently provided:</p>
 <ul>
 <li><code>ExActor.GenServer</code> - All <code>gen_server</code> callbacks are provided by GenServer from Elixir standard library.</li>
 <li><code>ExActor.Strict</code> - All <code>gen_server</code> callbacks are provided. The default implementations for all except <code>code_change</code> and <code>terminate</code> will cause the server to be stopped.</li>
 <li><code>ExActor.Tolerant</code> - All <code>gen_server</code> callbacks are provided. The default implementations ignore all messages without stopping the server.</li>
 <li><code>ExActor.Empty</code> - No default implementation for <code>gen_server</code> callbacks are provided.</li>
 </ul>
-
-<p>It is up to you to decide which predefine you want to use. See online docs for detailed description.
-You can also build your own predefine. Refer to the source code of the existing ones as a template.</p>
-
-<h2>Singleton actors</h2>
-
-<pre><code class="elixir">defmodule SingletonActor do
+<p>It is up to you to decide which predefine you want to use. See online docs for detailed description. You can also build your own predefine. Refer to the source code of the existing ones as a template.</p>
+<h2 id="singleton-actors">Singleton actors</h2>
+<pre class="elixir"><code>defmodule SingletonActor do
   # The actor process will be locally registered under an alias
   # provided in export option.
   use ExActor.GenServer, export: :some_registered_name
@@ -94,12 +74,9 @@ end
 
 SingletonActor.start
 SingletonActor.set(5)
-SingletonActor.get
-</code></pre>
-
-<h2>Handling of return values</h2>
-
-<pre><code class="elixir">definit do: initial_state(arg)                      # sets initial state
+SingletonActor.get</code></pre>
+<h2 id="handling-of-return-values">Handling of return values</h2>
+<pre class="elixir"><code>definit do: initial_state(arg)                      # sets initial state
 definit do: {:ok, arg}                              # standard gen_server response
 
 defcall a, state: state, do: reply(response)        # responds 5 but doesn&#39;t change state
@@ -112,38 +89,26 @@ defcast f, do: {:noreply, new_state}                # standard gen_server respon
 
 definfo c, do: noreply                              # doesn&#39;t change state
 definfo d, do: new_state(new_state)                 # sets new state
-definfo f, do: {:noreply, new_state}                # standard gen_server response
-</code></pre>
-
-<h2>Simplified starting</h2>
-
-<pre><code class="elixir">Actor.start                           # same as Actor.start(nil)
+definfo f, do: {:noreply, new_state}                # standard gen_server response</code></pre>
+<h2 id="simplified-starting">Simplified starting</h2>
+<pre class="elixir"><code>Actor.start                           # same as Actor.start(nil)
 Actor.start(init_arg)
 Actor.start(init_arg, options)
 
 Actor.start_link                      # same as Actor.start_link(nil)
 Actor.start_link(init_arg)
-Actor.start_link(init_arg, options)
-</code></pre>
-
-<h3>Dynamic registration</h3>
-
-<pre><code class="elixir">Actor.start(init_arg, name: :some_registered_name, ...)                   # registers locally
+Actor.start_link(init_arg, options)</code></pre>
+<h3 id="dynamic-registration">Dynamic registration</h3>
+<pre class="elixir"><code>Actor.start(init_arg, name: :some_registered_name, ...)                   # registers locally
 Actor.start(init_arg, name: {:local, :some_registered_name}, ...)         # registers locally
 Actor.start(init_arg, name: {:global, :some_registered_name}, ...)        # registers globally
 Actor.start(init_arg, name: {:via, :gproc, :some_registered_name}, ...)   # registers via external module
 
-# same for start_link
-</code></pre>
-
-<p>Starter functions are overridable. You can optionally specify that you don&#39;t want them:</p>
-
-<pre><code class="elixir">  use ExActor.GenServer, starters: false
-</code></pre>
-
-<h2>Simplified initialization</h2>
-
-<pre><code class="elixir"># define initial state
+# same for start_link</code></pre>
+<p>Starter functions are overridable. You can optionally specify that you don't want them:</p>
+<pre class="elixir"><code>  use ExActor.GenServer, starters: false</code></pre>
+<h2 id="simplified-initialization">Simplified initialization</h2>
+<pre class="elixir"><code># define initial state
 use ExActor.GenServer, initial_state: HashDict.new
 
 # alternatively as the function
@@ -153,18 +118,12 @@ definit do: HashSet.new
 definit x do
   x + 1
   |&gt; initial_state
-end
-</code></pre>
-
-<h2>Handling messages</h2>
-
-<pre><code class="elixir">definfo :some_message, do:
-definfo :another_message, state: ..., do:
-</code></pre>
-
-<h2>Pattern matching</h2>
-
-<pre><code class="elixir">defcall a(1), do: ...
+end</code></pre>
+<h2 id="handling-messages">Handling messages</h2>
+<pre class="elixir"><code>definfo :some_message, do:
+definfo :another_message, state: ..., do:</code></pre>
+<h2 id="pattern-matching">Pattern matching</h2>
+<pre class="elixir"><code>defcall a(1), do: ...
 defcall a(2), do: ...
 defcall a(x), state: 1, do: ...
 defcall a(x), when: x &gt; 1, do: ...
@@ -174,29 +133,18 @@ defcall a(_), do: ...
 definit :something, do: ...
 definit x, when: ..., do: ...
 
-definfo :msg, state: {...}, when: ..., do: ...
-</code></pre>
-
+definfo :msg, state: {...}, when: ..., do: ...</code></pre>
 <p>Note: all call/cast matches take place at the <code>handle_call</code> or <code>handle_cast</code> level. The interface function simply passes the arguments to appropriate <code>gen_server</code> function. Consequently, if a match fails, the server will crash.</p>
-
-<h2>Skipping interface funs</h2>
-
-<pre><code class="elixir"># interface fun will not be generated, just handle_call clause
-defcall unexported, export: false, do: :unexported
-</code></pre>
-
-<h2>Using from</h2>
-
+<h2 id="skipping-interface-funs">Skipping interface funs</h2>
+<pre class="elixir"><code># interface fun will not be generated, just handle_call clause
+defcall unexported, export: false, do: :unexported</code></pre>
+<h2 id="using-from">Using from</h2>
 <pre class="codeblock"><code>defcall a(...), from: {from_pid, ref} do
   ...
-end
-</code></pre>
-
-<h2>Runtime friendliness</h2>
-
+end</code></pre>
+<h2 id="runtime-friendliness">Runtime friendliness</h2>
 <p>May be useful if calls/casts simply delegate to some module/functions.</p>
-
-<pre><code class="elixir">defmodule DynActor do
+<pre class="elixir"><code>defmodule DynActor do
   use ExActor.GenServer
 
   for op &lt;- [:op1, :op2] do
@@ -204,14 +152,10 @@ end
       SomeModule.unquote(op)(state)
     end
   end
-end
-</code></pre>
-
-<h2>Simplified data abstraction delegation</h2>
-
-<p>Macro <code>delegate_to</code> is provided to shorten the definition when the state is implemented as a functional data abstraction, and operations simply delegate to that module. Here&#39;s an example:</p>
-
-<pre><code class="elixir">defmodule HashDictActor do
+end</code></pre>
+<h2 id="simplified-data-abstraction-delegation">Simplified data abstraction delegation</h2>
+<p>Macro <code>delegate_to</code> is provided to shorten the definition when the state is implemented as a functional data abstraction, and operations simply delegate to that module. Here's an example:</p>
+<pre class="elixir"><code>defmodule HashDictActor do
   use ExActor.GenServer
   import ExActor.Delegator
 
@@ -220,12 +164,9 @@ end
     query get/2
     trans put/3
   end
-end
-</code></pre>
-
+end</code></pre>
 <p>This is equivalent of:</p>
-
-<pre><code class="elixir">defmodule HashDictActor do
+<pre class="elixir"><code>defmodule HashDictActor do
   use ExActor.GenServer
 
   definit do: HashDict.new
@@ -238,9 +179,7 @@ end
     HashDict.put(state, k, v)
     |&gt; new_state
   end
-end
-</code></pre>
-
+end</code></pre>
 <p>You can freely mix <code>delegate_to</code> with other macros, such as <code>defcall</code>, <code>defcast</code>, and others.</p>
 
     </div>
