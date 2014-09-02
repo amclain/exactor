@@ -20,7 +20,7 @@
     </script>
 
     <div id="content">
-      <div class="breadcrumbs">exactor v0.6.0 &rarr; <a href="overview.html">Overview</a> &rarr; ExActor &rarr; <a href="ExActor.Operations.html">Operations</a></div>
+      <div class="breadcrumbs">exactor v0.7.0 &rarr; <a href="overview.html">Overview</a> &rarr; ExActor &rarr; <a href="ExActor.Operations.html">Operations</a></div>
 
       <h1>
         ExActor.Operations
@@ -47,7 +47,7 @@
       
 
       
-        <a href="https://github.com/sasa1977/exactor/blob/0.6.0/lib/exactor/operations.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/sasa1977/exactor/blob/0.7.0/lib/exactor/operations.ex#L1" class="view_source">Source</a>
       
 
       
@@ -61,9 +61,23 @@
   
 </tr>
 <tr>
+  <td class="summary_signature"><a href="#defcallp/3">defcallp(req_def, options \\ [], body)</a></td>
+  
+    <td class="summary_synopsis"><p>Same as <a href="#defcall/3"><code>defcall/3</code></a> but the interface function is private. Can be useful when you need to do pre/post processing in the caller process</p>
+</td>
+  
+</tr>
+<tr>
   <td class="summary_signature"><a href="#defcast/3">defcast(req_def, options \\ [], body)</a></td>
   
     <td class="summary_synopsis"><p>Defines the cast callback clause and a corresponding interface fun</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#defcastp/3">defcastp(req_def, options \\ [], body)</a></td>
+  
+    <td class="summary_synopsis"><p>Same as <a href="#defcast/3"><code>defcast/3</code></a> but the interface function is private. Can be useful when you need to do pre/post processing in the caller process</p>
 </td>
   
 </tr>
@@ -123,7 +137,32 @@ defcall a(x), state: state, when: state &gt; 1, do: ...
 defcall a(_), do: ...</code></pre>
 </div>
   
-    <a href="https://github.com/sasa1977/exactor/blob/0.6.0/lib/exactor/operations.ex#L86" class="view_source">Source</a>
+    <a href="https://github.com/sasa1977/exactor/blob/0.7.0/lib/exactor/operations.ex#L105" class="view_source">Source</a>
+  
+</div>
+<div class="detail">
+  <div class="detail_header" id="defcallp/3">
+    <span class="signature"><strong>defcallp(req_def, options \\ [], body)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(macro)</span>
+      <a href="#defcallp/3" class="detail_link" title="Link to this macro">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <div class="docstring"><p>Same as <a href="#defcall/3"><code>defcall/3</code></a> but the interface function is private. Can be useful when you need to do pre/post processing in the caller process.</p>
+<p>Examples:</p>
+<pre><code>def exported_interface(...) do
+  # do some client side preprocessing here
+  my_request(...)
+  # do some client side post processing here
+end
+
+# Not available outside of this module
+defcallp my_request(...), do: ...</code></pre>
+</div>
+  
+    <a href="https://github.com/sasa1977/exactor/blob/0.7.0/lib/exactor/operations.ex#L124" class="view_source">Source</a>
   
 </div>
 <div class="detail">
@@ -153,7 +192,32 @@ defcast a(x), state: state, when: state &gt; 1, do: ...
 defcast a(_), do: ...</code></pre>
 </div>
   
-    <a href="https://github.com/sasa1977/exactor/blob/0.6.0/lib/exactor/operations.ex#L58" class="view_source">Source</a>
+    <a href="https://github.com/sasa1977/exactor/blob/0.7.0/lib/exactor/operations.ex#L58" class="view_source">Source</a>
+  
+</div>
+<div class="detail">
+  <div class="detail_header" id="defcastp/3">
+    <span class="signature"><strong>defcastp(req_def, options \\ [], body)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(macro)</span>
+      <a href="#defcastp/3" class="detail_link" title="Link to this macro">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <div class="docstring"><p>Same as <a href="#defcast/3"><code>defcast/3</code></a> but the interface function is private. Can be useful when you need to do pre/post processing in the caller process.</p>
+<p>Examples:</p>
+<pre><code>def exported_interface(...) do
+  # do some client side preprocessing here
+  my_request(...)
+  # do some client side post processing here
+end
+
+# Not available outside of this module
+defcastp my_request(...), do: ...</code></pre>
+</div>
+  
+    <a href="https://github.com/sasa1977/exactor/blob/0.7.0/lib/exactor/operations.ex#L77" class="view_source">Source</a>
   
 </div>
 <div class="detail">
@@ -172,7 +236,7 @@ defcast a(_), do: ...</code></pre>
 definfo :another_message, state: ..., do:</code></pre>
 </div>
   
-    <a href="https://github.com/sasa1977/exactor/blob/0.6.0/lib/exactor/operations.ex#L98" class="view_source">Source</a>
+    <a href="https://github.com/sasa1977/exactor/blob/0.7.0/lib/exactor/operations.ex#L136" class="view_source">Source</a>
   
 </div>
 <div class="detail">
@@ -199,7 +263,7 @@ end
 definit x, when: ..., do: ...</code></pre>
 </div>
   
-    <a href="https://github.com/sasa1977/exactor/blob/0.6.0/lib/exactor/operations.ex#L23" class="view_source">Source</a>
+    <a href="https://github.com/sasa1977/exactor/blob/0.7.0/lib/exactor/operations.ex#L23" class="view_source">Source</a>
   
 </div>
 
