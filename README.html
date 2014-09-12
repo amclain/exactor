@@ -20,7 +20,7 @@
     </script>
 
     <div id="content">
-      <div class="breadcrumbs">exactor v0.7.0 &rarr; <a href="readme.html">README</a></div>
+      <div class="breadcrumbs">exactor v1.0.0 &rarr; <a href="readme.html">README</a></div>
       <h1 id="exactor">ExActor</h1>
 <p>Simplified implementation and usage of <code>gen_server</code> based actors in Elixir. This library is inspired by (though not depending on) <a href="https://github.com/yrashk/genx">GenX</a>, but in addition, removes some more boilerplate, and changes some semantics of the handle_call/cast responses.</p>
 <p>If you're new to Erlang, and are not familiar on how gen_server works, I strongly suggest you learn about it first. It's really not that hard, and you can use <a href="http://elixir-lang.org/docs/stable/elixir/GenServer.html">Elixir docs</a> as the starting point. Once you're familiar with gen_server, you can use ExActor to make your actors (gen_servers) more compact.</p>
@@ -29,7 +29,7 @@
 <p>The stable package is also available on <a href="https://hex.pm/packages/exactor">hex</a>.</p>
 <h2 id="basic-usage">Basic usage</h2>
 <p>Be sure to include a dependency in your <code>mix.exs</code>:</p>
-<pre class="elixir"><code>deps: [{:exactor, &quot;~&gt; 0.7.0&quot;}, ...]</code></pre>
+<pre class="elixir"><code>deps: [{:exactor, &quot;~&gt; 1.0.0&quot;}, ...]</code></pre>
 <pre class="elixir"><code>defmodule Actor do
   use ExActor.GenServer
 
