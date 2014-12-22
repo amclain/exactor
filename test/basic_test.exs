@@ -14,8 +14,9 @@ defmodule BasicTest do
     defcast set(x), do: new_state(x)
     defcall get, state: state, do: reply(state)
 
-    defcast pm_set, state: 2, do: new_state(:two)
-    defcast pm_set, state: 3, do: new_state(:three)
+    defcast pm_set
+    defhandlecast pm_set, state: 2, do: new_state(:two)
+    defhandlecast pm_set, state: 3, do: new_state(:two)
 
     defcall timeout, timeout: 10, do: (:timer.sleep(100); noreply)
 
