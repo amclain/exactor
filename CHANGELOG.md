@@ -1,3 +1,29 @@
+# v2.1.0
+- proper lineno generation
+- dynamic timeout specification via `timeout: timeout_match`
+
+## Breaking changes
+
+Due to incorrect lineno generation, it was possible to do:
+
+```
+defcall foo(x), state: pattern_1, ...
+defcall foo(x), state: pattern_2, ...
+```
+
+This will now emit a warning, since two clauses for the interface function are generated, and the first
+shadows the second one.
+
+To resolve this, you can specify headless interface function specification and define handler clauses
+via `defhandle*`:
+
+```
+defcall foo(x)
+defhandlecall foo(x), state: pattern_1, ...
+defhandlecall foo(x), state: pattern_2, ...
+```
+
+
 # v2.0.1
 - Fixed the docs link in `mix.exs`
 
